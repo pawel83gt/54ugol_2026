@@ -1,0 +1,398 @@
+ :root {
+   --coal: #1d2226;
+   /* фон hero, тексты */
+   --ash: #e9edf0;
+   /* фон страницы */
+   --paper: #fff;
+   --line: #d5dce1;
+   --muted: #55616b;
+   --azure: #0873ab;
+   /* кнопки и ссылки (контраст с белым 5:1) */
+   --azure-light: #48b6ee;
+   /* акцент на тёмном */
+   --head: "Oswald", "Arial Narrow", Arial, sans-serif;
+   --body: "Onest", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+ }
+
+ * {
+   box-sizing: border-box
+ }
+
+ html {
+   scroll-behavior: smooth
+ }
+
+ body {
+   margin: 0;
+   background: var(--ash);
+   color: var(--coal);
+   font: 400 1rem/1.5 var(--body);
+   padding-bottom: 88px
+ }
+
+ a {
+   color: var(--azure)
+ }
+
+ :focus-visible {
+   outline: 3px solid var(--azure-light);
+   outline-offset: 2px
+ }
+
+ .wrap {
+   max-width: 1080px;
+   margin: 0 auto;
+   padding: 0 20px
+ }
+
+ /* ---------- Шапка ---------- */
+ .top {
+   background: var(--paper);
+   border-bottom: 1px solid var(--line)
+ }
+
+ .top .wrap {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 16px 32px;
+   align-items: center;
+   justify-content: space-between;
+   padding-top: 14px;
+   padding-bottom: 14px
+ }
+
+ .brand {
+   display: flex;
+   gap: 14px;
+   align-items: center;
+   color: inherit;
+   text-decoration: none
+ }
+
+ .brand small {
+   display: block;
+   color: var(--muted);
+   font-size: .8rem
+ }
+
+ .brand b {
+   display: block;
+   font: 600 1.4rem/1.1 var(--head)
+ }
+
+ .contacts {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 6px 28px;
+   align-items: center
+ }
+
+ .phone {
+   font: 600 1.6rem/1 var(--head);
+   color: var(--coal);
+   text-decoration: none
+ }
+
+ .contacts span {
+   display: block;
+   font-size: .85rem;
+   color: var(--muted)
+ }
+
+ /* ---------- Hero ---------- */
+ .hero {
+   background: var(--coal);
+   color: #fff;
+   position: relative;
+   overflow: hidden
+ }
+
+ .hero .wrap {
+   position: relative;
+   z-index: 1;
+   padding-top: 56px;
+   padding-bottom: 72px
+ }
+
+ .hero h1 {
+   font: 600 clamp(2.1rem, 5.5vw, 3.6rem)/1.05 var(--head);
+   max-width: 13ch;
+   margin: 0 0 16px
+ }
+
+ .hero p {
+   max-width: 44ch;
+   margin: 0 0 28px;
+   color: #c7d0d6
+ }
+
+ .hero .pile {
+   position: absolute;
+   right: -30px;
+   bottom: 0;
+   width: min(62%, 660px);
+   height: auto;
+   z-index: 0
+ }
+
+ .btns {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 12px
+ }
+
+ .btn {
+   display: inline-block;
+   padding: 12px 22px;
+   border-radius: 6px;
+   background: var(--azure);
+   color: #fff;
+   font-weight: 600;
+   text-decoration: none;
+   border: 2px solid var(--azure);
+   transition: background .15s
+ }
+
+ .btn:hover {
+   background: #075f8d
+ }
+
+ .btn.ghost {
+   background: transparent;
+   border-color: #5c6a74
+ }
+
+ .btn.ghost:hover {
+   background: #2a3138
+ }
+
+ .btn[aria-disabled="true"] {
+   background: #9aa6ae;
+   border-color: #9aa6ae;
+   pointer-events: none
+ }
+
+ /* ---------- Прайс ---------- */
+ .price-sec {
+   padding: 40px 0 24px
+ }
+
+ .price-sec h2 {
+   font: 600 2rem/1.1 var(--head);
+   margin: 0 0 6px
+ }
+
+ .price-sec .lead {
+   margin: 0 0 20px;
+   color: var(--muted)
+ }
+
+ .list {
+   list-style: none;
+   margin: 0;
+   padding: 0;
+   background: var(--paper);
+   border: 1px solid var(--line);
+   border-radius: 10px
+ }
+
+ .row {
+   display: grid;
+   grid-template-columns: 128px 1fr auto 210px;
+   gap: 8px 24px;
+   align-items: center;
+   padding: 16px 20px
+ }
+
+ .row+.row {
+   border-top: 1px solid var(--line)
+ }
+
+ .thumb {
+   width: 128px;
+   height: 88px;
+   border-radius: 6px;
+   overflow: hidden;
+   background: #dfe5e9
+ }
+
+ .thumb svg {
+   display: block;
+   width: 100%;
+   height: 100%
+ }
+
+ .info h3 {
+   margin: 0 0 2px;
+   font-size: 1.1rem;
+   font-weight: 600
+ }
+
+ .info p {
+   margin: 0;
+   color: var(--muted);
+   font-size: .9rem
+ }
+
+ .price {
+   text-align: right;
+   white-space: nowrap
+ }
+
+ .price .num {
+   display: block;
+   font: 600 1.8rem/1 var(--head)
+ }
+
+ .price .unit {
+   font-size: .8rem;
+   color: var(--muted)
+ }
+
+ .buy {
+   display: flex;
+   flex-direction: column;
+   align-items: flex-end;
+   gap: 4px
+ }
+
+ .qty {
+   display: flex;
+   align-items: center;
+   gap: 6px
+ }
+
+ .qty button {
+   width: 40px;
+   height: 40px;
+   border: 1px solid var(--line);
+   background: var(--paper);
+   border-radius: 6px;
+   font-size: 1.3rem;
+   line-height: 1;
+   cursor: pointer;
+   color: var(--coal)
+ }
+
+ .qty button:hover {
+   border-color: var(--azure);
+   color: var(--azure)
+ }
+
+ .qty button:disabled {
+   opacity: .4;
+   cursor: default;
+   border-color: var(--line);
+   color: var(--coal)
+ }
+
+ .qty output {
+   min-width: 2ch;
+   text-align: center;
+   font: 600 1.3rem var(--head)
+ }
+
+ .qty .t {
+   color: var(--muted);
+   font-size: .9rem;
+   margin-right: 2px
+ }
+
+ .sum {
+   min-height: 1.4em;
+   font-size: .9rem;
+   color: var(--muted)
+ }
+
+ .sum strong {
+   color: var(--coal)
+ }
+
+ /* ---------- Подвал ---------- */
+ footer {
+   padding: 24px 0 40px;
+   color: var(--muted);
+   font-size: .9rem
+ }
+
+ footer .wrap {
+   display: flex;
+   flex-wrap: wrap;
+   gap: 8px 32px
+ }
+
+ /* ---------- Панель заказа ---------- */
+ .bar {
+   position: fixed;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   background: var(--coal);
+   color: #fff;
+   z-index: 10
+ }
+
+ .bar .wrap {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 16px;
+   padding-top: 14px;
+   padding-bottom: 14px
+ }
+
+ .bar .total {
+   font-size: .95rem;
+   color: #c7d0d6
+ }
+
+ .bar .total b {
+   color: #fff;
+   font: 600 1.35rem var(--head);
+   margin-left: 6px
+ }
+
+ /* ---------- Мобильная версия ---------- */
+ @media (max-width:760px) {
+   .hero .pile {
+     opacity: .35;
+     width: 110%;
+     right: -20%
+   }
+
+   .row {
+     grid-template-columns: 88px 1fr;
+     padding: 14px 16px
+   }
+
+   .thumb {
+     width: 88px;
+     height: 72px
+   }
+
+   .price {
+     grid-column: 1 / -1;
+     text-align: left;
+     display: flex;
+     align-items: baseline;
+     gap: 8px
+   }
+
+   .buy {
+     grid-column: 1 / -1;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center
+   }
+
+   .phone {
+     font-size: 1.4rem
+   }
+ }
+
+ @media (prefers-reduced-motion:reduce) {
+   * {
+     transition: none !important;
+     scroll-behavior: auto !important
+   }
+ }
