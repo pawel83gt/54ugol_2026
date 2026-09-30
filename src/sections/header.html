@@ -12,7 +12,46 @@
             <div>
                 <a href="mailto:karasuk@ntknso.ru">karasuk@ntknso.ru</a>
                 <span>г. Карасук, ул. Дещенко, 45</span>
+
+            </div>
+            <div id="openBtn">
+                <svg width="32px" height="32px" viewBox="-1.6 -1.6 19.20 19.20" xmlns="http://www.w3.org/2000/svg"
+                    fill="#0873ab" class="bi bi-geo-alt" stroke="#0873ab" stroke-width="0.368" transform="rotate(0)">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <path
+                            d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z">
+                        </path>
+                        <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"></path>
+                    </g>
+                </svg>
             </div>
         </div>
     </div>
 </header>
+<div class="modal-wrapper">
+    <dialog id="myModal">
+        <div class="modal-content">
+            <div style="width: 500px; height: 400px;">
+                <iframe
+                    src="https://yandex.ru/map-widget/v1/?um=constructor%3A33d591b0ccdbb72786fea77ee99e884f0de6650503259e87da01cb7575ecd823&amp;source=constructor"
+                    width="500" height="400" frameborder="0"></iframe>
+            </div>
+            <button id="closeBtn"><svg fill="#ba1717" width="32px" height="32px"
+                    viewBox="-1.28 -1.28 34.56 34.56" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ba1717"
+                    stroke-width="0.32">
+                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                    <g id="SVGRepo_iconCarrier">
+                        <title>cross-round</title>
+                        <path
+                            d="M0 16q0 3.264 1.28 6.208t3.392 5.12 5.12 3.424 6.208 1.248 6.208-1.248 5.12-3.424 3.392-5.12 1.28-6.208-1.28-6.208-3.392-5.12-5.088-3.392-6.24-1.28q-3.264 0-6.208 1.28t-5.12 3.392-3.392 5.12-1.28 6.208zM4 16q0-3.264 1.6-6.016t4.384-4.352 6.016-1.632 6.016 1.632 4.384 4.352 1.6 6.016-1.6 6.048-4.384 4.352-6.016 1.6-6.016-1.6-4.384-4.352-1.6-6.048zM9.76 20.256q0 0.832 0.576 1.408t1.44 0.608 1.408-0.608l2.816-2.816 2.816 2.816q0.576 0.608 1.408 0.608t1.44-0.608 0.576-1.408-0.576-1.408l-2.848-2.848 2.848-2.816q0.576-0.576 0.576-1.408t-0.576-1.408-1.44-0.608-1.408 0.608l-2.816 2.816-2.816-2.816q-0.576-0.608-1.408-0.608t-1.44 0.608-0.576 1.408 0.576 1.408l2.848 2.816-2.848 2.848q-0.576 0.576-0.576 1.408z">
+                        </path>
+                    </g>
+                </svg>
+
+            </button>
+        </div>
+    </dialog>
+</div>
