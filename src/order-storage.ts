@@ -37,3 +37,13 @@ export function removeOrderLine(name: string): Order {
   saveOrder(update);
   return update;
 }
+
+export function renderCartBadge(): void {
+  const order = loadOrder();
+  const totalEl = document.querySelector<HTMLElement>('#total');
+  const cartIcon = document.querySelector<HTMLElement>('#cart-icon');
+
+  if (totalEl) totalEl.textContent = order.total.toLocaleString('ru-RU') + ' ₽';
+  if (cartIcon) cartIcon.classList.toggle('active', order.lines.length > 0);
+}
+;

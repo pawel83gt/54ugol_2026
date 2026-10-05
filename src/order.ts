@@ -1,5 +1,5 @@
 import emailjs from '@emailjs/browser';
-import { loadOrder, clearOrder, removeOrderLine, type Order } from './order-storage';
+import { loadOrder, clearOrder, removeOrderLine, type Order, renderCartBadge } from './order-storage';
 
 
 const EMAILJS_SERVICE_ID = 'service_mlra4te';
@@ -11,6 +11,7 @@ const fmt = (n: number): string => n.toLocaleString('ru-RU') + ' ₽';
 
 
 export function initOrderPage(): void {
+
   const breakdownEl = document.querySelector<HTMLElement>('#order-breakdown');
   const totalEl = document.querySelector<HTMLElement>('#order-total');
   const emptyEl = document.querySelector<HTMLElement>('#order-empty');
@@ -19,6 +20,7 @@ export function initOrderPage(): void {
   const phoneInput = document.querySelector<HTMLInputElement>('#order-phone');
   const submitBtn = document.querySelector<HTMLButtonElement>('#order-submit');
   const statusEl = document.querySelector<HTMLElement>('#order-status');
+
 
 
   if (!breakdownEl || !totalEl || !form || !nameInput || !phoneInput || !submitBtn) return;
@@ -62,22 +64,19 @@ export function initOrderPage(): void {
 
   renderBreakdown(order);
 
+  renderCartBadge();
 
   // --- Блок 4: удаление отдельной позиции (делегирование клика на весь список) ---
   breakdownEl.addEventListener('click', (e) => {
     const btn = (e.target as HTMLElement).closest<HTMLButtonElement>('button.remove');
     if (!btn || !btn.dataset.name) return;
-
-
     const updated = removeOrderLine(btn.dataset.name);
-
+    renderCartBadge();
 
     if (!updated.lines.length) {
       showEmptyState();
       return;
     }
-
-
     renderBreakdown(updated);
   });
 
@@ -124,6 +123,7 @@ export function initOrderPage(): void {
 
 
       clearOrder();
+      renderCartBadge();
       form.hidden = true;
       breakdownEl.innerHTML = '';
       totalEl.textContent = fmt(0);

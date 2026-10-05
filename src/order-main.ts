@@ -6,4 +6,5 @@ import { initOrderPage } from './order';
 
 document.querySelector('#order')!.innerHTML = header + orderContent + footer;
 
+
 initOrderPage();

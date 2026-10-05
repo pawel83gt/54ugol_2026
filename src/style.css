@@ -54,50 +54,50 @@
  }
 
  .btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 28px;
-  border: none;
-  border-radius: 8px;
-  background: var(--azure);
-  color: #fff;
-  font: 600 1rem/1 var(--body, system-ui, sans-serif);
-  text-decoration: none;
-  cursor: pointer;
-  transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   padding: 12px 28px;
+   border: none;
+   border-radius: 8px;
+   background: var(--azure);
+   color: #fff;
+   font: 600 1rem/1 var(--body, system-ui, sans-serif);
+   text-decoration: none;
+   cursor: pointer;
+   transition: background .15s ease, transform .1s ease, box-shadow .15s ease;
+   box-shadow: 0 1px 2px rgba(0, 0, 0, .12);
  }
 
  .btn:hover {
-  background: var(--azure-dark);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+   background: var(--azure-dark);
+   box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
  }
 
  .btn:active {
-  transform: translateY(1px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
+   transform: translateY(1px);
+   box-shadow: 0 1px 2px rgba(0, 0, 0, .1);
  }
 
  .btn:focus-visible {
-  outline: 3px solid #48b6ee;
-  outline-offset: 2px;
+   outline: 3px solid #48b6ee;
+   outline-offset: 2px;
  }
 
  .btn[aria-disabled="true"],
  .btn:disabled {
-  background: #9aa6ae;
-  color: #fff;
-  cursor: default;
-  box-shadow: none;
-  pointer-events: none;
+   background: #9aa6ae;
+   color: #fff;
+   cursor: default;
+   box-shadow: none;
+   pointer-events: none;
  }
 
  /* Состояние при отправки */
  .btn.is-loading {
-  background: var(--azure-dark);
-  cursor: progress;
+   background: var(--azure-dark);
+   cursor: progress;
  }
 
  :focus-visible {
@@ -201,6 +201,39 @@
    cursor: pointer;
  }
 
+ /*-------Стили блока с корзиной--------*/
+ .cart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  color: #afafaf;
+  transition: color .2s ease;
+ }
+ .cart svg {
+  width: 26px;
+  height: 26px;
+ }
+ .cart span {
+  font: 600 .85rem var(--head, inherit);
+  color: inherit;
+  min-width: 70px;
+  text-align: center;
+  font-varinat-numeric: tabular-nums; /* цифры одинаковой ширины */
+ }
+ .cart.active {
+  color: var(--azure, #0873ab)
+ }
+ .cart:hover{
+  color: var(--azure-dark);
+ }
+ .cart:focus-visible {
+  outline: 2px solid var(--azure-light);
+  outline-offset: 3px;
+  border-radius: 4px;
+ }
+
  /* ---------- Hero ---------- */
  .hero {
    background: var(--coal);
@@ -301,51 +334,54 @@
    flex-direction: column;
    min-height: 100vh;
  }
+
  #order main {
-  flex: 1 0 auto;
+   flex: 1 0 auto;
  }
 
  #order-form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  max-width: 400px;
-}
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   max-width: 400px;
+ }
 
 
-#order-form label {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  font-size: .9rem;
-  color: var(--muted, #55616b);
-}
+ #order-form label {
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+   font-size: .9rem;
+   color: var(--muted, #55616b);
+ }
 
 
-#order-form input {
-  padding: 10px 12px;
-  border: 1px solid var(--line, #d5dce1);
-  border-radius: 6px;
-  font: inherit;
-  color: var(--coal, #1d2226);
-  background: #fff;
-}
+ #order-form input {
+   padding: 10px 12px;
+   border: 1px solid var(--line, #d5dce1);
+   border-radius: 6px;
+   font: inherit;
+   color: var(--coal, #1d2226);
+   background: #fff;
+ }
 
 
-#order-form input:focus-visible {
-  outline: 2px solid var(--azure, #0873ab);
-  outline-offset: 1px;
-  border-color: var(--azure, #0873ab);
-}
+ #order-form input:focus-visible {
+   outline: 2px solid var(--azure, #0873ab);
+   outline-offset: 1px;
+   border-color: var(--azure, #0873ab);
+ }
 
 
-#order-form button[type="submit"] {
-  align-self: flex-end; /* прижимает кнопку к правому краю внутри колонки */
-}
+ #order-form button[type="submit"] {
+   align-self: flex-end;
+   /* прижимает кнопку к правому краю внутри колонки */
+ }
 
-#order-form[hidden] {
-  display: none;
-}
+ #order-form[hidden] {
+   display: none;
+ }
+
  /* ---------- Прайс ---------- */
  .price-sec {
    padding: 40px 0 24px
@@ -501,6 +537,7 @@
  }
 
  /* ---------- Панель заказа ---------- */
+
  .bar {
    position: fixed;
    left: 0;
@@ -534,7 +571,12 @@
  .bar-inner {
    width: 100%;
    display: grid;
-   grid-template-columns: 200px auto 180px;
+   grid-template-columns: auto auto;
+ }
+
+ .bar-inner button {
+   all: unset;
+   cursor: pointer;
  }
 
  #breakdown {
@@ -550,10 +592,11 @@
    all: unset;
    cursor: pointer;
  }
+
  #order-breakdown li {
-  display: flex;
-  align-items: center;
-  gap: 8px 
+   display: flex;
+   align-items: center;
+   gap: 8px
  }
 
  .btn-order {

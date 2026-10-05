@@ -8,12 +8,11 @@ export function initCart(): void {
   const rows = Array.from(
     document.querySelectorAll<HTMLElement>('#list .row, #coal-bags .row')
   );
-  const checkout = document.querySelector<HTMLButtonElement>('#checkout');
+  const cartIcon = document.querySelector<HTMLButtonElement>('#cart-icon');
   const totalEl = document.querySelector<HTMLElement>('#total');
-  const cartIcon = document.querySelector<HTMLElement>('#cart-icon'); // необязательный
   const breakdownEl = document.querySelector<HTMLElement>('#breakdown'); // необязательный
 
-  if (!checkout || !totalEl) return;
+  if (!cartIcon || !totalEl) return;
 
   // Текущее состояние заказа — нужно обработчику клика на "Оформить"
   let currentLines: OrderLine[] = [];
@@ -59,9 +58,9 @@ export function initCart(): void {
     }
 
     if (lines.length) {
-      checkout.removeAttribute('aria-disabled');
+      cartIcon.removeAttribute('aria-disabled');
     } else {
-      checkout.setAttribute('aria-disabled', 'true');
+      cartIcon.setAttribute('aria-disabled', 'true');
     }
   };
 
@@ -92,8 +91,8 @@ export function initCart(): void {
   });
 
   // Клик по "Оформить" сохраняет заказ и переходит на страницу с деталями
-  checkout.addEventListener('click', () => {
-    if (checkout.getAttribute('aria-disabled') === 'true') return;
+  cartIcon.addEventListener('click', () => {
+    if (cartIcon.getAttribute('aria-disabled') === 'true') return;
     //saveOrder({ lines: currentLines, total: currentTotal });
     location.href = 'order.html';
   });
