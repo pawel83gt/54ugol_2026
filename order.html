@@ -3,26 +3,20 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Оформление заказа - ОСП Карасукский райтоп</title>
+    <meta name="theme-color" content="#1d2226">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600&family=Onest:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-    <main>
-        <h1>Ваш заказ</h1>
-        <a href="/">главная</a>
-        <p id="order-empty" hidden>Корзина пуста. <a href="/">Вернуться к выбору угля</a></p>
-        <ul id="order-breakdown"></ul>
-        <p>Итого: <strong id="order-total">0 ₽</strong></p>
+    <div id="order">
 
-        <form id="order-form">
-            <label>Имя <input id="order-name" type="text" required></label>
-            <label>Телефон <input id="order-phone" type="tel" required></label>
-            <button id="order-submit" type="submit">Отправить</button>
-        </form>
-        <p id="order-status" aria-live="polite"></p>
-    </main>
-
+    </div>
     <script type="module" src="/src/order-main.ts"></script>
 </body>
 
