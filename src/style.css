@@ -1,4 +1,5 @@
  :root {
+   --header-h: 80.39px;
    --coal: #1d2226;
    /* фон hero, тексты */
    --ash: #e9edf0;
@@ -32,6 +33,7 @@
 
  body {
    margin: 0;
+   padding-top: var(--header-h);
    background: var(--ash);
    color: var(--coal);
    font: 400 1rem/1.5 var(--body);
@@ -114,6 +116,12 @@
 
  /* ---------- Шапка ---------- */
  .top {
+   position: fixed;
+   left: 0;
+   right: 0;
+   top: 0;
+   z-index: 100;
+   height: var(--header-h);
    background: var(--paper);
    border-bottom: 1px solid var(--line)
  }
@@ -203,35 +211,41 @@
 
  /*-------Стили блока с корзиной--------*/
  .cart {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  text-decoration: none;
-  color: #afafaf;
-  transition: color .2s ease;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 2px;
+   text-decoration: none;
+   color: #afafaf;
+   transition: color .2s ease;
  }
+
  .cart svg {
-  width: 26px;
-  height: 26px;
+   width: 26px;
+   height: 26px;
  }
+
  .cart span {
-  font: 600 .85rem var(--head, inherit);
-  color: inherit;
-  min-width: 70px;
-  text-align: center;
-  font-varinat-numeric: tabular-nums; /* цифры одинаковой ширины */
+   font: 600 .85rem var(--head, inherit);
+   color: inherit;
+   min-width: 70px;
+   text-align: center;
+   font-varinat-numeric: tabular-nums;
+   /* цифры одинаковой ширины */
  }
+
  .cart.active {
-  color: var(--azure, #0873ab)
+   color: var(--azure, #0873ab)
  }
- .cart:hover{
-  color: var(--azure-dark);
+
+ .cart:hover {
+   color: var(--azure-dark);
  }
+
  .cart:focus-visible {
-  outline: 2px solid var(--azure-light);
-  outline-offset: 3px;
-  border-radius: 4px;
+   outline: 2px solid var(--azure-light);
+   outline-offset: 3px;
+   border-radius: 4px;
  }
 
  /* ---------- Hero ---------- */
