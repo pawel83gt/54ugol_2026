@@ -1,3 +1,4 @@
+import { renderCartBadge } from './order-storage';
 import emailjs from '@emailjs/browser';
 import IMask from 'imask';
 
@@ -13,6 +14,8 @@ export function initReview(): void {
     const reviewText = document.querySelector<HTMLInputElement>('#review-text');
     const submitBtn = document.querySelector<HTMLButtonElement>('#review-submit');
     const statusEl = document.querySelector<HTMLElement>('#review-status');
+
+    renderCartBadge();
 
     if (!form || !nameInput || !phoneInput || !reviewText || !submitBtn) return;
 
