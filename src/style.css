@@ -50,7 +50,7 @@
    padding: 0;
  }
 
- p {
+ h1, p {
    margin: 0;
    padding: 0;
  }
@@ -343,17 +343,17 @@
  }
 
  /*----- Ордер ----- */
- #order {
+ #order, #review {
    display: flex;
    flex-direction: column;
    min-height: 100vh;
  }
 
- #order main {
+ #order main, #review main {
    flex: 1 0 auto;
  }
 
- #order-form {
+ #order-form, #review-form {
    display: flex;
    flex-direction: column;
    gap: 16px;
@@ -361,7 +361,7 @@
  }
 
 
- #order-form label {
+ #order-form label, #review-form label {
    display: flex;
    flex-direction: column;
    gap: 6px;
@@ -370,7 +370,7 @@
  }
 
 
- #order-form input {
+ #order-form input, #review-form input, #review-form textarea {
    padding: 10px 12px;
    border: 1px solid var(--line, #d5dce1);
    border-radius: 6px;
@@ -380,20 +380,25 @@
  }
 
 
- #order-form input:focus-visible {
+ #order-form input:focus-visible, #review-form input:focus-visible {
    outline: 2px solid var(--azure, #0873ab);
    outline-offset: 1px;
    border-color: var(--azure, #0873ab);
  }
 
 
- #order-form button[type="submit"] {
+ #order-form button[type="submit"], #review-form button[type="submit"] {
    align-self: flex-end;
    /* прижимает кнопку к правому краю внутри колонки */
  }
 
- #order-form[hidden] {
+ #order-form[hidden], #review-form[hidden] {
    display: none;
+ }
+
+ /*-----review-----*/
+ .review-head{
+  margin-bottom: 12px;
  }
 
  /* ---------- Прайс ---------- */
