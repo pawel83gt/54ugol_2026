@@ -7,6 +7,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, 'index.html'),
         order: resolve(__dirname, 'order.html'),
+        review: resolve(__dirname, 'review.html'),
       },
     },
   },
